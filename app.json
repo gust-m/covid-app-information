@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "raquelCovid",
-    "slug": "raquelCovid",
+    "name": "covidInfo",
+    "slug": "covidInfo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
