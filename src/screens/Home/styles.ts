@@ -1,5 +1,9 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { theme } from '../../global/styles/theme';
+
+interface TitleViewTextProps {
+  isException?: boolean;
+}
 
 export const Container = styled.View`
   height: 100%;
@@ -42,23 +46,31 @@ export const Title = styled.Text`
   font-family: ${theme.fonts.title600};
 `;
 
-export const Text = styled.Text`
+export const TextHeader = styled.Text`
   font-size: 20px;
   color: #fff;
   text-align: center;
   font-family: ${theme.fonts.text400};
 `;
 
-export const TitleViewText = styled.Text`
+export const TitleViewText = styled.Text<TitleViewTextProps>`
   color: #454545;
   font-size: 18px;
   font-weight: 700;
+
+  margin-top: 20px;
+
+  ${props =>
+    props.isException &&
+    css`
+      margin-top: 0;
+    `}
 `;
 
-export const ViewText = styled.Text`
+export const Text = styled.Text`
   color: #999999;
   margin-left: 8px;
-  line-height: 19px;
+  line-height: 20px;
 `;
 
 export const Buttons = styled.View`

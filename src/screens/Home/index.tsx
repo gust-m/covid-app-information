@@ -6,12 +6,12 @@ import {
   Header,
   Description,
   Image,
-  Text,
+  TextHeader,
   Title,
   VerticalBar,
   Buttons,
   TitleViewText,
-  ViewText,
+  Text,
 } from './styles';
 
 import { Button } from '../../components/Button';
@@ -66,11 +66,11 @@ export const Home = (): JSX.Element => {
           <Title>INFO COVID-19</Title>
         </Header>
         <Description>
-          <Text>
+          <TextHeader>
             A Covid-19 é uma infecção respiratória aguda causada pelo
             coronavírus SARS-CoV-2, potencialmente grave, de elevada
             transmissibilidade e de distribuição global.
-          </Text>
+          </TextHeader>
         </Description>
         <Buttons>
           <Button handleOpenModal={handleOpenSymptomsModal}>SINTOMAS</Button>
@@ -88,23 +88,26 @@ export const Home = (): JSX.Element => {
         handleCloseModal={handleCloseSymptomsModal}
       >
         <TitleViewText>Sintomas mais comuns:</TitleViewText>
-        <ViewText>
-          - Febre {'\n'}- Tosse seca {'\n'}- Cansaço {'\n'}
-        </ViewText>
+        <Text>- Febre</Text>
+        <Text>- Tosse seca</Text>
+        <Text>- Cansaço</Text>
 
         <TitleViewText>Sintomas menos comuns:</TitleViewText>
-        <ViewText>
-          - Dores e desconfortos {'\n'}- Dor de garganta {'\n'}- Diarreia {'\n'}
-          - Conjuntivite {'\n'}- Dor de cabeça {'\n'}- Perda de paladar ou
-          olfato {'\n'}- Erupção cutânea na pele ou descoloração dos dedos das
-          mãos ou dos pés {'\n'}
-        </ViewText>
+        <Text>- Dores e desconfortos</Text>
+        <Text>- Dor de garganta</Text>
+        <Text>- Diarreia</Text>
+        <Text>- Conjuntivite</Text>
+        <Text>- Dor de cabeça</Text>
+        <Text>- Perda de paladar ou olfato</Text>
+        <Text>
+          - Erupção cutânea na pele ou descoloração dos dedos das mãos ou dos
+          pés
+        </Text>
 
         <TitleViewText>Sintomas graves:</TitleViewText>
-        <ViewText>
-          - Dificuldade de respirar ou falta de ar {'\n'}- Dor ou pressão no
-          peito {'\n'}- Perda de fala ou movimento {'\n'}
-        </ViewText>
+        <Text>- Dificuldade de respirar ou falta de ar</Text>
+        <Text>- Dor ou pressão no peito</Text>
+        <Text>- Perda de fala ou movimento</Text>
       </Modal>
 
       <Modal
@@ -112,39 +115,41 @@ export const Home = (): JSX.Element => {
         handleCloseModal={handleCloseAfterEffectsModal}
       >
         <TitleViewText>Sequelas:</TitleViewText>
-        <ViewText>
-          - Cansaço excessivo {'\n'}- Fraqueza {'\n'}- Dor muscular {'\n'}-
-          Tosse {'\n'}- Perda do olfato/paladar {'\n'}- Queda de cabelo {'\n'}-
-          Alteração dos hormônios {'\n'}- Fraqueza das unhas {'\n'}- Perda de
-          memória {'\n'}- Confusão mental {'\n'}
-        </ViewText>
+        <Text>- Cansaço excessivo</Text>
+        <Text>- Fraqueza</Text>
+        <Text>- Dor muscular</Text>
+        <Text>- Tosse</Text>
+        <Text>- Perda do olfato/paladar</Text>
+        <Text>- Queda de cabelo</Text>
+        <Text>- Alteração dos hormônios</Text>
+        <Text>- Fraqueza das unhas</Text>
+        <Text>- Perda de memória</Text>
+        <Text>- Confusão mental</Text>
       </Modal>
 
       <Modal
-        vaccineModal
         visible={vaccineModalOpen}
         handleCloseModal={handleCloseVaccineModal}
       >
         <TitleViewText>Vacinas:</TitleViewText>
-        <ViewText>
-          - BioNTech, Pfizer {'\n'}- CoronaVac {'\n'}- Johnson & Johnson {'\n'}-
-          Oxford, AstraZeneca {'\n'}- Sputnik V {'\n'}
-        </ViewText>
+        <Text>- BioNTech, Pfizer</Text>
+        <Text>- CoronaVac</Text>
+        <Text>- Johnson & Johnson</Text>
+        <Text>- Oxford, AstraZeneca</Text>
+        <Text>- Sputnik V</Text>
       </Modal>
 
       <Modal
         visible={takeCareModalOpen}
         handleCloseModal={handleCloseTakeCareModalOpenModal}
       >
-        <TitleViewText>
-          O que você precisa saber.{'\n'}Como prevenir o contágio:
-        </TitleViewText>
-        <ViewText>
-          - Lave as mãos com água e sabão ou sue álcool em gel.{'\n'}- Cubra o
-          nariz e boca ao espirrar ou tossir.{'\n'}- Evite aglomerações ese
-          estiver doente.{'\n'}- Mantenha os ambientes bem ventilados.{'\n'}-
-          Não compartilhe objetos pessoais.{'\n'}
-        </ViewText>
+        <TitleViewText>O que você precisa saber e fazer.</TitleViewText>
+        <TitleViewText isException>Como prevenir o contágio:</TitleViewText>
+        <Text>- Lave as mãos com água e sabão ou sue álcool em gel.</Text>
+        <Text>- Cubra o nariz e boca ao espirrar ou tossir.</Text>
+        <Text>- Evite aglomerações ese estiver doente.</Text>
+        <Text>- Mantenha os ambientes bem ventilados.</Text>
+        <Text>- Não compartilhe objetos pessoais.</Text>
       </Modal>
     </SafeAreaView>
   );
